@@ -1,0 +1,17 @@
+ modifier gateThree(bytes8 _gateKey) {
+     require(uint32(uint64(_gateKey)) == uint16(uint64(_gateKey)), "GatekeeperOne: invalid gateThree part one");
+     require(uint32(uint64(_gateKey)) != uint64(_gateKey), "GatekeeperOne: invalid gateThree part two");
+     require(uint32(uint64(_gateKey)) == uint16(uint160(tx.origin)), "GatekeeperOne: invalid gateThree part three");
+     // uint16(uint160(tx.origin)) = 3156
+     _;
+ }
+
+
+00000000 00000000  00000000 00000000    00000000 00000000  00000000 00000000
+10000000 00000000  00000000 00000000    00000000 00000000  00000000 00000c54
+10000000 00000000  00000000 00000000    00000000 00000000  00001100 01010100
+
+
+1000000000000000000000000000000000000000000000000000110001010100
+=
+0x8000000000000C54
